@@ -163,7 +163,7 @@ Untuk support dan bug report, silakan hubungi:
 
 ### Version 1.0
 - Initial release
-- Support untuk 7 payment methods
+- Support untuk 15 payment methods
 - Auto-refresh payment status
 - Admin dashboard
 - Comprehensive logging

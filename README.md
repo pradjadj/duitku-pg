@@ -126,7 +126,7 @@ duitku-va-gateway/
 
 Plugin menggunakan sistem logging untuk debugging:
 
-- Log file: `wp-content/uploads/wc-logs/duitku-*.log`
+- Log file: `wp-content/uploads/wc-logs/duitku-pg-*.log`
 - Level: INFO, WARNING, ERROR
 - Format: `[timestamp] LEVEL: message {context}`
 

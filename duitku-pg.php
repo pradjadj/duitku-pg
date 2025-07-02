@@ -94,6 +94,7 @@ class Duitku_VA_Gateway_Main {
         require_once DUITKU_VA_PLUGIN_PATH . 'includes/gateways/class-duitku-sampoerna-gateway.php';
         require_once DUITKU_VA_PLUGIN_PATH . 'includes/gateways/class-duitku-danamon-gateway.php';
         require_once DUITKU_VA_PLUGIN_PATH . 'includes/gateways/class-duitku-alfamart-gateway.php';
+        require_once DUITKU_VA_PLUGIN_PATH . 'includes/gateways/class-duitku-indomaret-gateway.php';
         require_once DUITKU_VA_PLUGIN_PATH . 'includes/gateways/class-duitku-qris-gateway.php';
     }
     
@@ -111,6 +112,7 @@ class Duitku_VA_Gateway_Main {
         $gateways[] = 'Duitku_Sampoerna_Gateway';
         $gateways[] = 'Duitku_Danamon_Gateway';
         $gateways[] = 'Duitku_Alfamart_Gateway';
+        $gateways[] = 'Duitku_Indomaret_Gateway';
         $gateways[] = 'Duitku_QRIS_Gateway';
         return $gateways;
     }

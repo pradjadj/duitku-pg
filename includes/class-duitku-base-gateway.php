@@ -214,7 +214,7 @@ abstract class Duitku_Base_Gateway extends WC_Payment_Gateway {
             echo '<div class="duitku-va-display">';
             echo '<h3>Informasi Detail Pembayaran</h3>';
             
-            if ($this->payment_code === 'FT') {
+            if ($this->payment_code === 'FT' || $this->payment_code === 'IR') {
                 echo '<p><strong>Kode Pembayaran:</strong></p>';
             } elseif (strpos($this->id, 'qris') !== false) {
                 echo '<p style="margin-bottom:0;"><strong>Silahkan Scan QRIS berikut</strong></p>';
@@ -311,6 +311,15 @@ protected function display_bank_specific_instructions() {
             echo '<li>Simpan struk pembayaran sebagai bukti transaksi</li>';
             echo '<li>Pembayaran akan terkonfirmasi secara otomatis</li>';
             echo '</ol>';
+        } elseif ($this->payment_code === 'IR') {
+        echo '<ol>';
+        echo '<li>Kunjungi gerai Indomaret terdekat</li>';
+        echo '<li>Beritahu kasir bahwa Anda ingin melakukan pembayaran ke <b>Finpay</b></li>';
+        echo '<li>Berikan kode pembayaran di atas kepada kasir</li>';
+        echo '<li>Bayar sesuai dengan jumlah yang tertera (mungkin akan ada biaya tambahan saat di kasir)</li>';
+        echo '<li>Simpan struk pembayaran sebagai bukti transaksi</li>';
+        echo '<li>Pembayaran akan terkonfirmasi secara otomatis</li>';
+        echo '</ol>';
         } else {
             echo '<ol>';
             echo '<li>Login ke aplikasi mobile banking atau internet banking anda</li>';

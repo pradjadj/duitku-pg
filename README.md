@@ -4,7 +4,7 @@ Plugin WordPress untuk integrasi payment gateway Duitku dengan WooCommerce, mend
 
 ## Fitur
 
-- **Multiple Payment Methods**: Mendukung Virtual Account dari BNI, BRI, Mandiri, BSI, CIMB Niaga, Permata Bank, Alfamart dan QRIS
+- **Multiple Payment Methods**: Mendukung Virtual Account dari beberapa Bank besar di Indonesia, Retail (Alfamart/Pegadaian/Pos Indonesia) dan QRIS
 - **Multiple QRIS Provider**: ShopeePay, Nobu Bank, DANA, Gudang Voucher, Nusapay
 - **Real-time Payment Status**: Auto-refresh status pembayaran tanpa perlu reload manual halaman
 - **Secure Callback Handling**: Validasi signature untuk keamanan callback dari Duitku
@@ -48,13 +48,19 @@ https://yourdomain.com/?duitku_callback=1
 
 Masuk ke **WooCommerce > Settings > Payments** dan aktifkan payment method yang diinginkan:
 
+- BCA Virtual Account
 - BNI Virtual Account
 - BRI Virtual Account  
 - Mandiri Virtual Account
 - BSI Virtual Account
 - CIMB Niaga Virtual Account
 - Permata Bank Virtual Account
-- Alfamart
+- Danamon Virtual Account
+- Maybank Virtual Account
+- Bank Sahabat Sampoerna Virtual Account
+- Bank Artha Graha Virtual Account
+- Alfamart/Pegadaian/POS Indonesia (via Finpay)
+- Indomaret
 - QRIS
 
 ## Struktur File
@@ -71,13 +77,19 @@ duitku-va-gateway/
 │   ├── admin/
 │   │   └── class-duitku-admin-settings.php # Admin settings
 │   └── gateways/
+│       ├── class-duitku-alfamart-gateway.php
+│       ├── class-duitku-artha-gateway.php
+│       ├── class-duitku-bca-gateway.php
+│       ├── class-duitku-bnc-gateway.php
 │       ├── class-duitku-bni-gateway.php
 │       ├── class-duitku-bri-gateway.php
-│       ├── class-duitku-mandiri-gateway.php
-│       ├── class-duitku-bsi-gateway.php
 │       ├── class-duitku-cimb-gateway.php
+│       ├── class-duitku-danamon-gateway.php
+│       ├── class-duitku-mandiri-gateway.php
+│       ├── class-duitku-maybank-gateway.php
 │       ├── class-duitku-permata-gateway.php
-│       └── class-duitku-alfamart-gateway.php
+│       ├── class-duitku-sampoerna-gateway.php
+│       ├── class-duitku-qris-gateway.php
 ├── assets/
 │   ├── js/
 │   │   └── duitku-checkout.js     # JavaScript untuk auto-refresh
@@ -98,18 +110,6 @@ duitku-va-gateway/
 
 ### AJAX Endpoints
 - **Check Payment Status**: `wp-ajax.php?action=duitku_check_payment_status`
-
-## Payment Codes
-
-| Bank | Payment Code |
-|------|--------------|
-| BNI | I1 |
-| BRI | BR |
-| Mandiri | M2 |
-| BSI | BV |
-| CIMB Niaga | B1 |
-| Permata Bank | BT |
-| Alfamart | FT |
 
 ## Hooks & Filters
 

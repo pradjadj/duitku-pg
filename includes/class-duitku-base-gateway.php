@@ -313,8 +313,8 @@ protected function display_bank_specific_instructions() {
             echo '</ol>';
         } elseif ($this->payment_code === 'IR') {
         echo '<ol>';
-        echo '<li>Kunjungi gerai Indomaret terdekat</li>';
-        echo '<li>Beritahu kasir bahwa Anda ingin melakukan pembayaran ke <b>Finpay</b></li>';
+        echo '<li>Kunjungi gerai Indomaret / Ceriamart / Super Indo terdekat</li>';
+        echo '<li>Beritahu kasir bahwa Anda ingin melakukan pembayaran <b>Payment Point kategori e-Commerce</b></li>';
         echo '<li>Berikan kode pembayaran di atas kepada kasir</li>';
         echo '<li>Bayar sesuai dengan jumlah yang tertera (mungkin akan ada biaya tambahan saat di kasir)</li>';
         echo '<li>Simpan struk pembayaran sebagai bukti transaksi</li>';
@@ -332,7 +332,7 @@ protected function display_bank_specific_instructions() {
             echo '<li>Pembayaran akan terkonfirmasi secara otomatis</li>';
             echo '</ol>';
         }
-        
+
         echo '</div>';
     }
     

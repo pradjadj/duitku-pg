@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class Duitku_Alfamart_Gateway extends Duitku_Base_Gateway {
+class Duitku_Indomaret_Gateway extends Duitku_Base_Gateway {
     
     public function __construct() {
         $this->id = 'duitku_indomaret';

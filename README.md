@@ -59,8 +59,8 @@ Masuk ke **WooCommerce > Settings > Payments** dan aktifkan payment method yang 
 - Maybank Virtual Account
 - Bank Sahabat Sampoerna Virtual Account
 - Bank Artha Graha Virtual Account
-- Alfamart/Pegadaian/POS Indonesia (via Finpay)
-- Indomaret
+- Alfamart / Pegadaian / POS Indonesia (via Finpay)
+- Indomaret / Ceriamart / Super Indo
 - QRIS
 
 ## Struktur File

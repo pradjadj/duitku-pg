@@ -96,8 +96,6 @@ duitku-va-gateway/
 │   └── css/
 │       ├── duitku-style.css       # Frontend styles
 │       └── duitku-admin.css       # Admin styles
-├── templates/
-│   └── payment-instructions.php   # Template instruksi pembayaran
 └── README.md
 ```
 

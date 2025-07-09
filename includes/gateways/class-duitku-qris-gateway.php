@@ -70,7 +70,7 @@ class Duitku_QRIS_Gateway extends Duitku_Base_Gateway {
             'description' => array(
                 'title'       => __('Description', 'woocommerce'),
                 'type'        => 'textarea',
-                'default'     => 'Silahkan pilih provider QRIS dan lakukan pembayaran dengan scan QR code.',
+                'default'     => 'Scan dengan Mobile Banking / e-wallet kesayangan kamu.',
             ),
             'qris_provider' => array(
                 'title'       => __('Pilih Provider QRIS', 'woocommerce'),

@@ -75,7 +75,7 @@ class Duitku_QRIS_Gateway extends Duitku_Base_Gateway {
             'qris_provider' => array(
                 'title'       => __('Pilih Provider QRIS', 'woocommerce'),
                 'type'        => 'select',
-                'description' => __('Pilih provider QRIS yang akan digunakan untuk pembayaran.', 'woocommerce'),
+                'description' => __('Pilih provider QRIS yang akan digunakan untuk pembayaran dari Dashboard Duitku yang aktif.', 'woocommerce'),
                 'default'     => 'SP',
                 'options'     => $provider_options,
             ),

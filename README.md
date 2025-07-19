@@ -167,6 +167,9 @@ Untuk support dan bug report, silakan hubungi:
 - Comprehensive logging
 - HPOS compatibility
 
+### Version 1.1
+- Penambahan fitur Status Setelah Pembayaran
+
 ## License
 
 Plugin ini menggunakan lisensi GPL v2 atau yang lebih baru.

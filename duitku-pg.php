@@ -333,29 +333,33 @@ class Duitku_VA_Gateway_Main {
         $status = '';
         $redirect_url = '';
         
-        // Process response
-        if (isset($response['statusCode'])) {
-            switch ($response['statusCode']) {
-                case '00':
-                    // Payment success
-                    if (!$order->has_status('completed')) {
-                        // Check if payment has been recorded
-                        $recorded_reference = $order->get_meta('_duitku_payment_reference');
-                        if (empty($recorded_reference)) {
-                            // Set payment reference first
-                            $order->update_meta_data('_duitku_payment_reference', $response['reference']);
-                            
-                            // Update status to processing (modern way without deprecated hooks)
-                            $order->set_status('processing', sprintf(
-                                __('Payment completed via Duitku. Reference: %s', 'woocommerce'),
-                                $response['reference']
-                            ));
-                            $order->save();
-                        }
-                    }
-                    $status = 'completed';
-                    $redirect_url = $gateway->get_return_url($order);
-                    break;
+                // Process response
+                if (isset($response['statusCode'])) {
+                    switch ($response['statusCode']) {
+                        case '00':
+                            // Payment success
+                            if (!$order->has_status('completed')) {
+                                // Check if payment has been recorded
+                                $recorded_reference = $order->get_meta('_duitku_payment_reference');
+                                if (empty($recorded_reference)) {
+                                    // Get status from admin settings
+                                    $merchant_settings = get_option('duitku_settings', array());
+                                    $status_after_payment = isset($merchant_settings['payment_status_after_payment']) ? $merchant_settings['payment_status_after_payment'] : 'processing';
+                                    
+                                    // Set payment reference first
+                                    $order->update_meta_data('_duitku_payment_reference', $response['reference']);
+                                    
+                                    // Update status based on admin setting
+                                    $order->set_status($status_after_payment, sprintf(
+                                        __('Payment completed via Duitku. Reference: %s', 'woocommerce'),
+                                        $response['reference']
+                                    ));
+                                    $order->save();
+                                }
+                            }
+                            $status = 'completed';
+                            $redirect_url = $gateway->get_return_url($order);
+                            break;
                     
                 case '01':
                     // Payment pending

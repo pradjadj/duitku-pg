@@ -97,8 +97,12 @@ class Duitku_Callback {
                 $order->update_meta_data('_duitku_reference', $data['reference']);
                 $order->update_meta_data('_duitku_settlement_date', $data['settlementDate']);
                 
-                // Update order status (modern way without deprecated hooks)
-                $order->set_status('processing', sprintf(
+                // Get status from admin settings
+                $merchant_settings = get_option('duitku_settings', array());
+                $status_after_payment = isset($merchant_settings['payment_status_after_payment']) ? $merchant_settings['payment_status_after_payment'] : 'processing';
+                
+                // Update order status based on admin setting
+                $order->set_status($status_after_payment, sprintf(
                     __('Payment completed via Duitku. Reference: %s', 'woocommerce'),
                     $data['reference']
                 ));

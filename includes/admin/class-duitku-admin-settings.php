@@ -113,6 +113,18 @@ class Duitku_Admin_Settings {
                 'default' => isset($options['merchant_order_prefix']) ? $options['merchant_order_prefix'] : 'TRX-',
                 'desc_tip' => true,
             ),
+            'payment_status_after_payment' => array(
+                'name' => __('Status Setelah Pembayaran', 'woocommerce'),
+                'type' => 'select',
+                'desc' => __('Pilih status order setelah pembayaran berhasil dilakukan.', 'woocommerce'),
+                'id' => 'payment_status_after_payment',
+                'options' => array(
+                    'processing' => __('Processing', 'woocommerce'),
+                    'completed' => __('Completed', 'woocommerce'),
+                ),
+                'default' => isset($options['payment_status_after_payment']) ? $options['payment_status_after_payment'] : 'processing',
+                'desc_tip' => true,
+            ),
             'callback_info' => array(
                 'name' => __('Callback URL Information', 'woocommerce'),
                 'type' => 'title',

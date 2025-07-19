@@ -3,7 +3,7 @@
  * Plugin Name: Duitku Payment Gateway
  * Plugin URI: https://sgnet.co.id
  * Description: Duitku Payment Gateway for WooCommerce - Display VA/QRIS directly on checkout page
- * Version: 1.0
+ * Version: 1.1
  * Author: Pradja DJ
  * Author URI: https://sgnet.co.id
  * Requires at least: 6.0
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('DUITKU_VA_VERSION', '1.0');
+define('DUITKU_VA_VERSION', '1.1');
 define('DUITKU_VA_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DUITKU_VA_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
